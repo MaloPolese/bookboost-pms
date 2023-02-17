@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Room extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'local',
-        'firstname',
-        'lastname',
-        'email',
-        'phone',
+        'number',
+        'floor'
     ];
 
     public function reservations()

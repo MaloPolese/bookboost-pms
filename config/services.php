@@ -31,4 +31,11 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'mews' => [
+        'url' => env('MEWS_URL'),
+        'clientToken' => env('MEWS_CLIENT_TOKEN'),
+        'accessToken' => env('MEWS_ACCESS_TOKEN'),
+        'client' => env('MEWS_CLIENT'),
+    ]
+
 ];
