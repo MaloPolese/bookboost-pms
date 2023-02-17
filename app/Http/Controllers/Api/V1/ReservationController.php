@@ -25,13 +25,13 @@ class ReservationController extends Controller
         $filter = new ReservationQuery();
         $queryItems = $filter->getQuery($request);
 
-        $reservations = Reservation::where($queryItems)->get();
+        $reservations = Reservation::where($queryItems);
 
         if ($request->query('eager')) {
-            $reservations->load(['user', 'room']);
+            $reservations->with(['user', 'room']);
         }
 
-        return new ReservationCollection($reservations);
+        return new ReservationCollection($reservations->paginate()->appends($request->query()));
     }
 
     /**

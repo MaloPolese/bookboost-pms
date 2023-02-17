@@ -18,7 +18,7 @@ class RoomController extends Controller
      */
     public function index()
     {
-        return new RoomCollection(Room::all());
+        return new RoomCollection(Room::paginate());
     }
 
     /**
